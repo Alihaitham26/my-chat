@@ -1,0 +1,38 @@
+.App{
+  width: var(--App-size);
+  margin: 0 auto;
+}
+.msg-viewer{
+  width: 100%;
+  height: calc(var(--App-size));
+  background-color: #fff;
+}
+.msg-sender{
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.msg-sender input{
+  width: calc(100% - 50px);
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+  padding-left: 5px;
+  outline: transparent;
+}
+.msg-sender button{
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+}
+.msg-sender button img{
+  width: 100%;
+}
+@media(max-width:576px){
+  .App{
+    width: calc(100% - 20px);
+  }
+}
