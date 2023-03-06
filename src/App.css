@@ -6,6 +6,8 @@
   width: 100%;
   height: calc(var(--App-size));
   background-color: #fff;
+  padding: 10px;
+  overflow: scroll;
 }
 .msg-sender{
   display: flex;
@@ -31,8 +33,33 @@
 .msg-sender button img{
   width: 100%;
 }
+.msg{
+  width: 70%;
+  background-color: #edf3f9;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.msg h3{
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.6;
+}
+.msg p{
+  margin: 3px;
+}
+.msg .time{
+  opacity: 0.5;
+  font-size: 0.8rem;
+  text-align: right;
+  margin-right: 5px;
+}
 @media(max-width:576px){
   .App{
     width: calc(100% - 20px);
+  }
+  .msg{
+    width: 90%;
   }
 }
