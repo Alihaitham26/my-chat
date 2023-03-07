@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import moment from "moment";
 import { createContext, useContext, useEffect, useState } from "react";
 
 const AppContext = createContext({})
@@ -25,12 +26,22 @@ const AppContextProvider = ({children}) =>{
     )
     .subscribe()
   },[])
+  const getTimeStamp = ()=>{
+    return moment().toISOString()
+  }
+  const sendMsg = async ({text,userName})=>{
+    if(text && userName){
+      const {error} = await supabase.from("chat").insert([{text,username:userName,timestamp:getTimeStamp()}])
+      console.log(error)
+    }
+  }
 
   return (
     <AppContext.Provider
       value={{
         supabase,
-        msgs
+        msgs,
+        sendMsg
       }}
     >
       {children}
