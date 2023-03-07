@@ -1,4 +1,10 @@
+import { useEffect } from "react"
+import initUser from "../lib/initUser"
+
 export default function MsgSender(){
+  useEffect(()=>{
+    console.log(initUser())
+  })
   return(
     <div className="msg-sender">
       <input type="text" placeholder="Enter a message"/>
